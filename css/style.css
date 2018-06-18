@@ -1,0 +1,67 @@
+*{padding: 0;margin: 0}
+a{text-decoration: none;}
+main div kbd{
+  display: inline-block;      /*inline内聯元素不能調整大小*/
+  height:48px;
+  width:60px;
+  text-transform: uppercase;
+  position: relative;
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border:1px solid #262626;
+  border-radius: 7px;
+  background: linear-gradient(to bottom, #292929 1%,#111111 100%);
+  color: #CFCFCF;
+  box-shadow: 0 1px 0 1px #161718, 0 2px 0 2px #030303, 0 3px 0 2px #000000;
+  font-family: Helvetica;
+}
+main div kbd button{
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 26px;
+  height:20px;
+  border:0; 
+  background-color: transparent;
+  color:#CFCFCF;
+}
+main div kbd:hover button{
+  display:inline-block;
+}
+#main1 {
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 15px 15px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+#main1 > div {
+   margin: 15px 0;
+   position: relative;
+}
+#main1 > div:nth-child(2){
+  margin-left: -30px;
+}
+#main1 > div:nth-child(3){
+  margin-left:  -120px;
+}
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body{
+  background:grey url(./222.png) no-repeat center center;
+  background-size: cover;
+}
+#main1 > div img{
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

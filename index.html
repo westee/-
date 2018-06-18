@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+	<header></header>
+	<main>
+		<div id="main1"></div>
+	</main>
+	<footer></footer>
+</body>
+
+<script>
+	var a = {
+		'0': ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+		'1': ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+		'2': ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
+		'length': 3
+	}
+	var hash = {
+		q: 'qq.com',
+		w: 'weibo.com',
+		e: 'ele.me',
+		r: 'renren.com',
+		t: 'taobao.com',
+		y: 'yy.com'
+	}
+	var hashInLocalStorage = JSON.parse(localStorage.getItem('newhash') || 'null')
+	if (hashInLocalStorage) {                 //如果hashInlocalStorage不为空
+		hash = hashInLocalStorage               //覆盖掉hash里的内容
+	}
+	index0 = 0
+	while (index0 < a.length) {
+		row = a[index0]
+		index1 = 0                     //獲得行内容
+		x = document.createElement('div')   //向x裏寫入元素(標簽)div
+		main1.appendChild(x)                //向main1裏插入(追加)標簽x(div)
+		while (index1 < row.length) {
+			zz = row[index1]					//取值为q w e r
+			//web = hash[zz]
+			y = document.createElement('kbd')   //向y裏寫入元素(標簽)kbd
+			cc = document.createElement('button')   //向cc写入button标签
+			ico = document.createElement('img')
+			
+			if(hash[row[index1]]){
+				ico.src = 'http://'+hash[row[index1]]+'/favicon.ico' 
+			}else{
+				ico.src = 'https://i.loli.net/2017/11/10/5a05afbc5e183.png'
+			}
+			ico.onerror = function(xxx){
+				xxx.target.src = 'https://i.loli.net/2017/11/10/5a05afbc5e183.png'
+			}
+			
+			y.textContent = zz                 //規定(y)的内容
+			cc.textContent = '编辑'				//规定cc(button)的内容
+			cc.id = row[index1]
+			x.appendChild(y)                    //向x裏插入標簽y(kbd)
+			y.appendChild(cc)
+			y.appendChild(ico)
+			cc.onclick = function (inf) {         //这里的问题是获取不到对应的按键,不能用key
+				console.log(cc)                   //每次都是m键,这个问题以后会讲
+				bb = inf.target.id                //获取到hash里网址对应的按键字母
+				console.log(bb)
+				hash[bb] = prompt('请输入一个网址')       //对相应键值对内容更改
+				//hash[bb] = prompt('请输入一个网址')      
+				localStorage.setItem('newhash', JSON.stringify(hash))     //创建一个localStorage  把hash转换为字符串
+			}
+
+			index1 = index1 + 1
+		}
+		index0 = index0 + 1
+	}
+	document.onkeypress = function (inf) {
+		keyvalue = inf.key
+		website = hash[keyvalue]
+		console.log(website)
+		// location.href = 'http://'+website
+		window.open('http://' + website)
+
+	}
+  //main1.appendChild(y)
+  // index0 = 0
+  // while(index0 < a.length){
+  //   x = document.createElement('kbd')
+  //   main1.appendChild(x)
+  //   row = a[index0]
+  //   index1 = 0
+  //   while(index1 < row.length){
+
+  //     key = row[index1]
+  //     hash = hash[key]
+
+  //   }    
+
+
+  //   index0 = index0 + 1
+
+  // }
+
+</script>
+
+</html>
