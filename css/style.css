@@ -24,9 +24,11 @@ main div kbd button{
   right: 0;
   width: 26px;
   height:20px;
-  border:0; 
-  background-color: transparent;
-  color:#CFCFCF;
+  border:1px solid transparent;
+  border-radius:4px;
+  white-space: nowrap; 
+  background-color: rgb(255, 165, 0);
+  color:white;
 }
 main div kbd:hover button{
   display:inline-block;
