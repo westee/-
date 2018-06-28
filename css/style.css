@@ -33,6 +33,9 @@ main div kbd button{
 main div kbd:hover button{
   display:inline-block;
 }
+main div kbd button:hover{
+  background-color: #161616; 
+}
 #main1 {
   text-align: center;
   border: 1px solid transparent;
