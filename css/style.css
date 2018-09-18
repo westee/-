@@ -60,7 +60,7 @@ main{
   height: 100vh;
 }
 body{
-  background:grey url(./222.png) no-repeat center center;
+  background:grey url('http://pduh5b8r3.bkt.clouddn.com/wallhaven-664148%20%281%29.jpg') no-repeat center center;
   background-size: cover;
 }
 #main1 > div img{
@@ -69,4 +69,9 @@ body{
   position: absolute;
   left: 0;
   bottom: 0;
+}
+@media(min-width:850px){
+  kbd{
+    width: calc(25% -10px);
+  }
 }
