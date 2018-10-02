@@ -47,20 +47,25 @@ main div kbd button:hover{
    margin: 15px 0;
    position: relative;
 }
+
 #main1 > div:nth-child(2){
   margin-left: -30px;
 }
 #main1 > div:nth-child(3){
   margin-left:  -120px;
 }
+
 main{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
+  margin-top:auto;
+  margin-bottom: auto;
 }
 body{
-  background:grey url('http://pduh5b8r3.bkt.clouddn.com/wallhaven-664148%20%281%29.jpg') no-repeat center center;
+  background:grey url('./bg.jpg') no-repeat center center;
   background-size: cover;
 }
 #main1 > div img{
@@ -74,4 +79,35 @@ body{
   kbd{
     width: calc(25% -10px);
   }
+}
+#search{
+  margin-bottom: 50px;
+  margin-top: -20px;
+  height: 10vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer{
+  height: 10vh; 
+}
+#btn{
+  height: 30px;
+  width: 80px;
+  border:1px solid #262626;
+  border-radius: 7px;
+  background: linear-gradient(to bottom, #292929 1%,#111111 100%);
+  box-shadow: 0 1px 0 1px #161718, 0 2px 0 2px #030303, 0 3px 0 2px #000000;
+  color: #CFCFCF;
+}
+#btn:hover{
+  border:1px solid #464646;
+  background: linear-gradient(to bottom, #494949 1%,#333333 100%);
+  box-shadow: 0 1px 0 1px #363738, 0 2px 0 2px #232323, 0 3px 0 2px #222222;
+}
+input{
+  height: 25px;
+  width: 400px;
+  border-radius: 6px;
 }
