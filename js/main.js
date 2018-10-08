@@ -52,7 +52,6 @@ for (var index0 = 0; index0 < a.length; index0 = index0 + 1) {
       bb = inf.target
       console.log(bb.nextSibling)
       img2 = bb.nextSibling
-      //bb = inf.target.id                //获取到hash里网址对应的按键字母
       key1 = bb.id
       webpage = prompt('请输入一个网址') //对相应键值对内容更改
       hash[key1] = webpage
@@ -60,7 +59,8 @@ for (var index0 = 0; index0 < a.length; index0 = index0 + 1) {
       ico.onerror = function (xxx) {
         xxx.target.src = 'https://i.loli.net/2017/11/10/5a05afbc5e183.png'
       }
-      localStorage.setItem('newhash', JSON.stringify(hash)) //创建一个localStorage  把hash转换为字符串
+      localStorage.setItem('newhash', JSON.stringify(hash))
+       //创建一个localStorage  把hash转换为字符串
     }
   }
 }
@@ -69,7 +69,11 @@ var flag = false
 function focusss() {
   document.onkeypress = null
 }
-
+document.onkeypress = function (inf) {
+  keyvalue = inf.key
+  website = hash[keyvalue]
+  window.open('http://' + website)
+}
 function blurrr() {
   document.onkeypress = function (inf) {
     keyvalue = inf.key
